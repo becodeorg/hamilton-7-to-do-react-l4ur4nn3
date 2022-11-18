@@ -1,25 +1,18 @@
 import React, { useState } from "react";
 
 export default function TodoList() {
-    const initialTodos = ["My first todo", "My second todo"];
+    const initialTodos = [{
+        text: "My first todo",
+        check: false},{
+        text: "My second todo",
+        check: false}];
     const [todos, setTodos] = useState(initialTodos);
-    const [isSubscribed, setIsSubscribed] = useState(false);
-
-    const handleChange = event => {
-    if (event.target.checked) {
-        console.log('✅ Checkbox is checked');
-    } else {
-        console.log('⛔️ Checkbox is NOT checked');
-    }
-    setIsSubscribed(current => !current);
-};
     return (
-        <ul class="ml-5 text-base">
-            {todos.map((todo) => (
-                <li>
-                    <input type="checkbox" value={isSubscribed} onChange={handleChange} class="ml-5" /> {todo}
+        <ul className="ml-5 text-base">
+            {todos.map((todo, index) => (
+                <li key={index}>
+                    <input type="checkbox" defaultChecked={todo.check}  className="ml-5" /> {todo.text}
                 </li>
             ))}
         </ul>
-    );
-}
+    );}
