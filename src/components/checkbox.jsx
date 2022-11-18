@@ -11,7 +11,7 @@ export default function TodoList() {
         <ul className="ml-10 text-base">
             {todos.map((todo, index) => (
                 <li key={index} className="pb-5 hover:italic hover:cursor-pointer">
-                    <input type="checkbox" defaultChecked={todo.check}  className="ml-10" /> {todo.text}
+                    <input type="checkbox" defaultChecked={todo.check}  className="ml-10 hover:cursor-pointer" /> {todo.text}
                 </li>
             ))}
         </ul>
