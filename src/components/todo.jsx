@@ -46,8 +46,8 @@ export default function ToDo(props) {
     
 
     return ( 
-        <div className="flex flex-col justify-center items-center w-full">
-            <ul className={`grid grid-cols-1 ${toDo.length > 1 ?"sm:grid-cols-2":""} ${toDo.length > 2 ?"lg:grid-cols-3":""} ${toDo.length > 2 ?"xl:grid-cols-4":""} sm:ml-auto mr-auto gap-10`}>
+        <div className="flex flex-col">
+            <ul className="ml-5">
                 {todos.map((todo) => (
                 <li key={todo.id}>
                     <input type="checkbox" id={todo.id} value={todo.done} checked={todo.done} onChange={() => {
@@ -57,18 +57,18 @@ export default function ToDo(props) {
                 </li>
                 ))}
             </ul>
-            <div className={`flex w-full align-center justify-center ${toDo.length === 0 ?"hidden":""}`}>
-                <button className="bg-blue-500 text-white h-10 m-5 hover:bg-blue-800 rounded-md w-[45%] disabled:bg-gray-800" disabled title="Coming Soon™" onClick={
+            <div className={`flex w-full ml-12 gap-10 ${toDo.length === 0 ?"hidden":""}`}>
+                <button className="mt-5 p-2 rounded-md bg-slate-100 lowercase hover:bg-zinc-400 hover:text-white" onClick={
                     () => {
-                        if(window.confirm('This will completely remove all the things done. Are you sure you want to continue ?\nThis action cannot be undone.')) {
+                        if(window.confirm('Are you sure you want to continue ?\nThis action cannot be undone.')) {
                         window.localStorage.removeItem(locStorage + ".todos");
                         window.location.reload(false);
                         }
                 }
-                }>remove completed</button> 
-                <button className="bg-blue-500 text-white h-10 m-5 hover:bg-blue-800 rounded-md w-[45%]" onClick={
+                }>remove completed tasks</button> 
+                <button className="mt-5 p-2 rounded-md bg-slate-100 lowercase hover:bg-zinc-400 hover:text-white" onClick={
                     () => {
-                        if(window.confirm('This will completely remove all the things to do. Are you sure you want to continue ?\nThis action cannot be undone.')) {
+                        if(window.confirm('Are you sure you want to continue ?\nThis action cannot be undone.')) {
                         window.localStorage.removeItem(locStorage + ".todos");
                         window.location.reload(false);
                         }

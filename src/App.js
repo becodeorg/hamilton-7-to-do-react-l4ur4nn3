@@ -54,18 +54,18 @@ export default function App(){
     window.localStorage.setItem(locStorage + ".todos", JSON.stringify(Todo));
   },[Todo]);
 return (
-  <div className="App text-left -screen w-screen flex flex-col justify-start pt-10 pb-10">
+  <div className="App w-1/2 text-left -screen flex flex-col justify-start pt-10 pb-10">
     <h1 className="ml-10 mb-10 text-2xl uppercase">
         My Todo App <i className="fa-sharp fa-solid fa-heart-circle-check text-white"></i>
         </h1>
     <div className="mt-5 ml-5 flex justify-center align-center flex-col">
       <Form addTodo={addTodo}/>
       <hr className="mt-5 text-white" />
-      <h2 className="ml-10 mt-10 mb-10 text-xl uppercase">
+      <h2 className="ml-5 mt-10 text-xl uppercase">
           Todos <i className="fa-solid fa-ellipsis text-white"></i>
         </h2>
     </div>
-    <div class="App text-left -screen w-screen flex flex-col justify-start pt-10 pb-10">
+    <div className="App text-left -screen w-1/2 flex flex-col justify-start pt-10 pb-10">
       <ToDo todo={Todo}/>
     </div>
   </div>

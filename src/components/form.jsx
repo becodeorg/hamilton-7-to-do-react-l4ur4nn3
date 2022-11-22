@@ -46,9 +46,9 @@ export default function Form(props) {
         }
     }
     return (
-        <div className=" w-full flex flex-col justify-center text-center items-center ">
-            <input ref={inputRef} type="text" placeholder="type a new todo..." className="border p-1 pl-2 rounded-md w-11/12" onKeyUp={enterHandler}></input>
-            <button className="mt-5 ml-5 p-2 rounded-md bg-slate-100 lowercase hover:bg-zinc-400 hover:text-white" onClick={clickHandler}>Add task</button>
+        <div className="w-full text-left ml-5">
+            <input ref={inputRef} type="text" placeholder="type a new todo..." className="border p-1 pl-2 rounded-md w-1/2" onKeyUp={enterHandler}></input>
+            <button className="ml-5 mt-5 p-2 rounded-md bg-slate-100 lowercase hover:bg-zinc-400 hover:text-white" onClick={clickHandler}>Add task</button>
         </div>
     )
 }
